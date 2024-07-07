@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deny & Emah Wedding</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sacramento&display=swap" rel="stylesheet" />
+
+    <!--simplyCountDown-->
+    <link rel="stylesheet" href="countDown/simplyCountdown.theme.default.css" />
+    <script src="countDown/simplyCountdown.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+      <main>
+        <h4>Merayakan cinta dan kebahagiaan bersama</h4>
+        <h1>Deny & Emah</h1>
+        <p>Akan Merayakan Anniversary Pernikahan yang ke-<span id="anniversary-number"></span></p>
+        <div class="simply-countdown"></div>
+        <a href="#undangan" class="btn btn-lg mt-4">Lihat Undangan</a>
+      </main>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      const d = new Date();
+      let year = d.getFullYear();
+      simplyCountdown(".simply-countdown", {
+        year: year, //Date.getFullYear(), // required
+        month: 8, // required
+        day: 20, // required
+        hours: 0, // Default is 0 [0-23] integer
+        minutes: 0, // Default is 0 [0-59] integer
+        seconds: 0, // Default is 0 [0-59] integer
+        words: {
+          //words displayed into the countdown
+          days: { singular: "day", plural: "days" },
+          hours: { singular: "hour", plural: "hours" },
+          minutes: { singular: "minute", plural: "minutes" },
+          seconds: { singular: "second", plural: "seconds" },
+        },
+        plural: true, //use plurals
+        inline: false, //set to true to get an inline basic countdown like : 24 days, 4 hours, 2 minutes, 5 seconds
+        inlineClass: "simply-countdown-inline", //inline css span class in case of inline = true
+        // in case of inline set to false
+        enableUtc: false,
+        onEnd: function () {
+          // your code
+          return;
+        },
+        refresh: 1000, //default refresh every 1s
+        sectionClass: "simply-section", //section css class
+        amountClass: "simply-amount", // amount css class
+        wordClass: "simply-word", // word css class
+        zeroPad: false,
+        countUp: false, // enable count up if set to true
+      });
+
+      // Also, you can init with already existing Javascript Object.
+      let myElement = document.querySelector(".my-countdown");
+      simplyCountdown(myElement, {
+        /* options */
+      });
+
+      let multipleElements = document.querySelectorAll(".my-countdown");
+      simplyCountdown(multipleElements, {
+        /* options */
+      });
+    </script>
+
+    <script>
+      /**Get Anniv-Num**/
+      // Tanggal pernikahan
+      const weddingDate = new Date("2019-08-20");
+
+      // Fungsi untuk menghitung tahun anniversary
+      function getAnniversaryYears() {
+        const currentDate = new Date();
+        const years = currentDate.getFullYear() - weddingDate.getFullYear();
+
+        // Jika belum mencapai tanggal anniversary di tahun ini, kurangi 1
+        // const monthDifference = currentDate.getMonth() - weddingDate.getMonth();
+        // const dayDifference = currentDate.getDate() - weddingDate.getDate();
+
+        // if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+        //   return years - 1;
+        // }
+        return years;
+      }
+
+      // Memperbarui teks pada elemen HTML
+      document.getElementById("anniversary-number").textContent = getAnniversaryYears();
+    </script>
+  </body>
+</html>
