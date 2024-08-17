@@ -66,10 +66,7 @@
         <div class="row justify-content-center">
           <div class="col-md 8 text-center">
             <h2>Untuk Cinta dan Kasih Sayang</h2>
-            <h3>
-              Deny Arsyad <br />&<br />
-              Emah Hujaemah Wijaya Kusumah
-            </h3>
+            <h3>Didedikasikan Untuk Cinta Yang Tidak Akan Pernah Pudar</h3>
             <p>
               Di setiap detik yang kita habiskan bersama, aku semakin yakin bahwa bersamamu adalah keputusan terbaik dalam hidupku. Terima kasih telah menjadi bagian dari hari-hariku, dan untuk semua cinta yang tak pernah berhenti kamu
               berikan. Selamat anniversary, sayang! Mari kita terus merajut cerita indah bersama, hingga akhir waktu.
@@ -83,8 +80,8 @@
               <div class="col-8 text-end">
                 <h3>Deny Arsyad</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, distinctio placeat? Quos dolorem tenetur quae exercitationem rem voluptates autem nesciunt est amet reprehenderit, laudantium beatae culpa minima, id
-                  explicabo eos?
+                  Ingatkah kita saat pertama kali bertemu di parkiran kampus tercinta? Senyummu yang manis membuatku langsung jatuh hati. Sejak saat itu, setiap hari bersamamu adalah petualangan baru. Hari ini, di hari jadi pernikahan kita,
+                  aku ingin mengucapkan terima kasih atas semua cinta dan kebahagiaan yang telah kita bagi. Mari kita terus mencipta kenangan indah bersama.
                 </p>
               </div>
               <div class="col-4">
@@ -101,8 +98,8 @@
               <div class="col-8">
                 <h3>Emah H.W.K</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, distinctio placeat? Quos dolorem tenetur quae exercitationem rem voluptates autem nesciunt est amet reprehenderit, laudantium beatae culpa minima, id
-                  explicabo eos?
+                  Dari sepasang remaja yang saling jatuh cinta, kita tumbuh menjadi pasangan suami istri yang saling melengkapi. Kita telah melewati banyak suka dan duka bersama, namun cinta kita semakin kuat. Hari ini, di hari jadi kita,
+                  aku bersyukur memiliki kamu sebagai sahabat hidup. Mari kita terus belajar dan tumbuh bersama.
                 </p>
               </div>
             </div>
@@ -111,6 +108,14 @@
       </div>
     </section>
     <!-- End Home -->
+
+    <!-- Start Info -->
+    <section id="info" class="info">
+      <div class="container">
+        <div class="row"></div>
+      </div>
+    </section>
+    <!-- End Info -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
@@ -181,6 +186,19 @@
 
       // Memperbarui teks pada elemen HTML
       document.getElementById("anniversary-number").textContent = getAnniversaryYears();
+    </script>
+
+    <script>
+      const btnToggler = document.querySelector(".navbar-toggler");
+      const stickyTop = document.querySelector(".sticky-top");
+      btnToggler.addEventListener("click", function () {
+        stickyTop.style.overflow = "visible";
+      });
+
+      const offcanvas = document.querySelector(".offcanvas");
+      offcanvas.addEventListener("hidden.bs.offcanvas", function () {
+        stickyTop.style.overflow = "hidden";
+      });
     </script>
   </body>
 </html>
